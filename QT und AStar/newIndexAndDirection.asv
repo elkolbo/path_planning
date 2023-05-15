@@ -1,0 +1,147 @@
+function [newIndex,newDir] = newIndexAndDirection(index,direction)
+%Implementation of the FSM of this Paper:A Practical Algorithm for Computing Neighbors in Quadtrees, Octrees, and Hyperoctrees
+index=char(index);
+    
+switch direction
+    case 1
+       switch index
+           case '1'
+               newIndex=2;
+               newDir=9;
+           case 2
+                 newIndex='1';
+               newDir=1;
+           case '3'
+                 newIndex='4';
+               newDir=9;
+           case '4'
+                 newIndex='3';
+               newDir=1;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+               
+    case 'L'
+        switch index
+           case '1'
+               newIndex=2;
+               newDir='L';
+           case 2
+                 newIndex='1';
+               newDir=9;
+           case '3'
+                 newIndex='4';
+               newDir='L';
+           case '4'
+                 newIndex='3';
+               newDir=9;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+        
+    case 3
+        switch index
+           case '1'
+               newIndex='3';
+               newDir=9;
+           case 2
+                 newIndex='4';
+               newDir=9;
+           case '3'
+                 newIndex='1';
+               newDir=3;
+           case '4'
+                 newIndex=2;
+               newDir=3;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+    case 'U'
+        switch index
+           case '1'
+               newIndex='3';
+               newDir='U';
+           case 2
+                 newIndex='4';
+               newDir='U';
+           case '3'
+                 newIndex='1';
+               newDir=9;
+           case '4'
+                 newIndex=2;
+               newDir=9;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+    case 'RU'
+        switch index
+           case '1'
+               newIndex='4';
+               newDir='U';
+           case 2
+                 newIndex='3';
+               newDir='RU';
+           case '3'
+                 newIndex=2;
+               newDir=9;
+           case '4'
+                 newIndex='1';
+               newDir=1;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+    case 'RD'
+        switch index
+           case '1'
+               newIndex='4';
+               newDir=9;
+           case 2
+                 newIndex='3';
+               newDir=1;
+           case '3'
+                 newIndex=2;
+               newDir=3;
+           case '4'
+                 newIndex='1';
+               newDir='RD';
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+    case 'LD'
+        switch index
+           case '1'
+               newIndex='4';
+               newDir='L';
+           case 2
+                 newIndex='3';
+               newDir=9;
+           case '3'
+                 newIndex=2;
+               newDir='LD';
+           case '4'
+                 newIndex='1';
+               newDir=3;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+       end
+    case 'LU'
+        switch index
+           case '1'
+               newIndex='4';
+               newDir='LU';
+           case 2
+                 newIndex='3';
+               newDir='U';
+           case '3'
+                 newIndex=2;
+               newDir='L';
+           case '4'
+                 newIndex='1';
+               newDir=9;
+           otherwise
+               error('Dieser Quadrant existiert nicht!')
+        end
+end
+end
+
+
