@@ -1,0 +1,1 @@
+This repo is the corresponding code to my Bachelors Thesis. The PDF of the Thesis can also be found in the repo. All necessary explanaitons of the code, how to run it and background information can be found in the repo. Solutions are found at the end of the thesis. But be aware it is in German.
